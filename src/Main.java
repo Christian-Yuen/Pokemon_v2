@@ -135,10 +135,8 @@ public class Main {
         while (Pokemonalive > 1){
             System.out.println(current.getName() + " | Level " + current.getLevel() + " | Types:" + current.getType1() + " | " + current.getType2());
             System.out.println("HP: " + current.getCurrentHp() + " / " + current.getHp());
-            System.out.println("Speed: " + current.getSpe());
             System.out.println(oCurrent.getName() + ". Level " + oCurrent.getLevel()+ " | Types:" + oCurrent.getType1() + " | " + oCurrent.getType2());
             System.out.println("HP: " + oCurrent.getCurrentHp() + " / " + oCurrent.getHp());
-            System.out.println("Speed: " + oCurrent.getSpe());
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("Would you like to [1] Fight, [2] Switch, or [3] Terrastilise?");
@@ -933,13 +931,13 @@ public class Main {
         // looks at the status move the enemy has, and checks whether or not any of them are favourable
 
         if (enemy.getCurrentHp() > enemy.getHp()*0.75){ //Decides whether or not it is an appropate situation to use the status moves
-            if (enemy.getMove3().equals(Will) && !player.getType1().equals("Fire") && !player.getType2().equals("Fire")){
+            if (enemy.getMove3().equals(Will) && !player.getType1().equals("Fire") && !player.getType2().equals("Fire")&&!player.getBurn()){
                 return enemy.getMove3();
             }
-            else if (enemy.getMove3().equals(para) && !player.getType1().equals("Electric") && !player.getType2().equals("Electric")){
+            else if (enemy.getMove3().equals(para) && !player.getType1().equals("Electric") && !player.getType2().equals("Electric")&&!player.getPara()){
                 return enemy.getMove3();
             }
-            else if (enemy.getMove3().equals(freeze) && !player.getType1().equals("Ice") && !player.getType2().equals("Ice")){
+            else if (enemy.getMove3().equals(freeze) && !player.getType1().equals("Ice") && !player.getType2().equals("Ice")&&!player.getFreeze()){
                 return enemy.getMove3();
             }
             else if (enemy.getMove3().equals(sword)){
